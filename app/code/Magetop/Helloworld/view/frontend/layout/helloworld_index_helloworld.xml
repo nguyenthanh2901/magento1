@@ -10,7 +10,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magetop\Helloworld\Block\Index" name="hello_index_helloworld" template="Magetop_Helloworld::hello.phtml"/>
+            <block class="Magetop\Helloworld\Block\Index" name="helloworld_index_helloworld" template="Magetop_Helloworld::hello.phtml"/>
         </referenceContainer>
     </body>
 </page>

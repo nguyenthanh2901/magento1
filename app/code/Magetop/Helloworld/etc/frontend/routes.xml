@@ -9,7 +9,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard"> <!-- standard or admin -->
-        <route id="hello" frontName="hello">
+        <route id="helloworld" frontName="helloworld">
             <module name="Magetop_Helloworld" />
         </route>
     </router>
