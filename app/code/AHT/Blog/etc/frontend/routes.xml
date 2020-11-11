@@ -1,16 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-/**
- * routes
- *
- * @copyright Copyright © 2020 MAGETOP. All rights reserved.
- * @author    info@magetop.com
- */
--->
+<?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="standard"> <!-- standard or admin -->
-        <route id="blog" frontName="blog">
-            <module name="AHT_Blog" />
+    <router id="standard">
+        <route frontName="blog" id="blog">
+            <module name="AHT_Blog"/>
         </route>
     </router>
 </config>

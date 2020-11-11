@@ -1,23 +1,27 @@
 <?php
 namespace AHT\Blog\Controller\Index;
 
-use Magento\Framework\App\Action\Action;
-use Magento\Framework\View\Result\PageFactory;
-use Magento\Framework\App\Action\Context;
+use \Magento\Framework\App\Action\Action;
 
 class Index extends Action
 {
-    protected $pageFactory;
+	protected $_pageFactory;
 
-    public function __construct(Context $context, PageFactory $pageFactory)
-    {
-        parent::__construct($context);
-        $this->pageFactory = $pageFactory;
-    }
+	protected $_postFactory;
 
+	public function __construct(
+		\Magento\Framework\App\Action\Context $context,
+		\Magento\Framework\View\Result\PageFactory $pageFactory,
+		\AHT\Blog\Model\PostFactory $postFactory
+		)
+	{
+		$this->_pageFactory = $pageFactory;
+		$this->_postFactory = $postFactory;
+		return parent::__construct($context);
+	}
 
-    public function execute()
-    {
-        return $this->pageFactory->create();
-    }
+	public function execute()
+	{
+		return $this->_pageFactory->create();
+	}
 }
