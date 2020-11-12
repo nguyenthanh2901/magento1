@@ -142,7 +142,7 @@ return [
         'Magento_InventoryLowQuantityNotificationApi' => 1,
         'Magento_InventoryMultiDimensionalIndexerApi' => 1,
         'Magento_InventoryProductAlert' => 1,
-        'Magento_InventoryRphp bin/magento setup:di:compileequisitionList' => 1,
+        'Magento_InventoryRequisitionList' => 1,
         'Magento_InventoryReservations' => 1,
         'Magento_InventoryReservationCli' => 1,
         'Magento_InventoryReservationsApi' => 1,

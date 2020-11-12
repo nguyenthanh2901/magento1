@@ -2,8 +2,8 @@
 namespace Magetop\Helloworld\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
-use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\PageFactory;
 
 class Helloworld extends Action
 {
@@ -14,7 +14,6 @@ class Helloworld extends Action
         parent::__construct($context);
         $this->pageFactory = $pageFactory;
     }
-
 
     public function execute()
     {
