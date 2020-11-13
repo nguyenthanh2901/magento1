@@ -1,6 +1,5 @@
 <?php
-
-namespace AHT\Blog\Setup;
+namespace Magetop\Helloworld\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
@@ -14,10 +13,10 @@ class UpgradeSchema implements UpgradeSchemaInterface
 
 		$installer->startSetup();
 
-		if (version_compare($context->getVersion(), '1.0.4', '<')) {
-			if (!$installer->tableExists('aht_blog_post')) {
+		if (version_compare($context->getVersion(), '1.0.2', '<')) {
+			if (!$installer->tableExists('magetop_hello_post')) {
 				$table = $installer->getConnection()->newTable(
-					$installer->getTable('aht_blog_post')
+					$installer->getTable('magetop_hello_post')
 				)
 					->addColumn(
 						'post_id',
@@ -84,9 +83,9 @@ class UpgradeSchema implements UpgradeSchemaInterface
 				$installer->getConnection()->createTable($table);
 
 				$installer->getConnection()->addIndex(
-					$installer->getTable('aht_blog_post'),
+					$installer->getTable('magetop_hello_post'),
 					$setup->getIdxName(
-						$installer->getTable('aht_blog_post'),
+						$installer->getTable('magetop_hello_post'),
 						['name', 'url_key', 'image', 'content'],
 						\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
 					),
@@ -96,7 +95,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
             }
             else{
                 $setup->getConnection()->addColumn(
-                    $setup->getTable('aht_blog_post'),
+                    $setup->getTable('magetop_hello_post'),
                     'season',
                     [
                         'type' => \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
@@ -112,4 +111,3 @@ class UpgradeSchema implements UpgradeSchemaInterface
 		$installer->endSetup();
 	}
 }
-
