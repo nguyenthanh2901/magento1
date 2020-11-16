@@ -10,8 +10,8 @@ class Index extends Template
     
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \AHT\Blog\Model\PostFactory $postFactory,
-        \AHT\Blog\Model\PostRepository $postRepository
+        \Magetop\Helloworld\Model\PostFactory $postFactory,
+        \Magetop\Helloworld\Model\PostRepository $postRepository
     )
     {
         parent::__construct($context);

@@ -1,7 +1,7 @@
 <?php
-namespace AHT\Blog\Controller\Index;
+namespace Magetop\Helloworld\Controller\Index;
 
-class Delete extends \Magento\Framework\App\Action\Action
+class Save extends \Magento\Framework\App\Action\Action
 {
     protected $_pageFactory;
 
@@ -12,14 +12,17 @@ class Delete extends \Magento\Framework\App\Action\Action
     protected $_coreRegistry;
 
     protected $resultRedirect;
+
+    protected $urlInterface;
+
     private $_cacheTypeList;
     private $_cacheFrontendPool;
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $pageFactory,
-        \AHT\Blog\Model\PostFactory $postFactory,
-        \AHT\Blog\Model\PostRepository $postRepository,
+        \Magetop\Helloworld\Model\PostFactory $postFactory,
+        \Magetop\Helloworld\Model\PostRepository $postRepository,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Framework\Controller\ResultFactory $result,
         \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList,
@@ -38,10 +41,26 @@ class Delete extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        $post_id = $this->getRequest()->getParam('post_id');
-        $this->_postRepository->deleteById($post_id);
+        $post = $this->_postFactory->create();
+        if (isset($_POST['editbtn'])) {
+            $post->setId($_POST['editbtn']);
+            $post->setName($_POST['name']);
+            $post->setUrlKey($_POST['url']);
+            $post->setContent($_POST['content']);
+            $post->setStatus($_POST['status']);
+            $post->setUpdatedAt(date('Y-m-d H:i:s'));
+        } elseif (isset($_POST['createbtn'])) {
+            $post->setName($_POST['name']);
+            $post->setUrlKey($_POST['url']);
+            $post->setContent($_POST['content']);
+            $post->setStatus($_POST['status']);
+            $post->setCreatedAt(date('Y-m-d H:i:s'));
+            $post->setUpdatedAt(date('Y-m-d H:i:s'));
+        }
 
-        $types = ['config','layout','block_html','collections','reflection','db_ddl','eav','config_integration','config_integration_api','full_page','translate','config_webservice'];
+        $this->_postRepository->save($post);
+
+        $types = ['config','layout','block_html','collections','reflection','db_ddl','compiled_config','eav','config_integration','config_integration_api','full_page','translate','config_webservice','vertex'];
         foreach ($types as $type) {
             $this->_cacheTypeList->cleanType($type);
         }
@@ -50,7 +69,7 @@ class Delete extends \Magento\Framework\App\Action\Action
         }
 
         $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('blog/index/index');
+        $resultRedirect->setPath('helloworld/index/index');
         return $resultRedirect;
     }
 }

@@ -1,25 +1,22 @@
 <?php
-namespace AHT\Blog\Controller\Index;
+namespace Magetop\Helloworld\Controller\Index;
 
 class Delete extends \Magento\Framework\App\Action\Action
 {
     protected $_pageFactory;
-
     protected $_postFactory;
-
     protected $_postRepository;
-
     protected $_coreRegistry;
-
     protected $resultRedirect;
+
     private $_cacheTypeList;
     private $_cacheFrontendPool;
 
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $pageFactory,
-        \AHT\Blog\Model\PostFactory $postFactory,
-        \AHT\Blog\Model\PostRepository $postRepository,
+        \Magetop\Helloworld\Model\PostFactory $postFactory,
+        \Magetop\Helloworld\Model\PostRepository $postRepository,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Framework\Controller\ResultFactory $result,
         \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList,
@@ -38,7 +35,7 @@ class Delete extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        $post_id = $this->getRequest()->getParam('post_id');
+        $post_id = $this->getRequest()->getParam('post_id'); 
         $this->_postRepository->deleteById($post_id);
 
         $types = ['config','layout','block_html','collections','reflection','db_ddl','eav','config_integration','config_integration_api','full_page','translate','config_webservice'];
@@ -50,7 +47,7 @@ class Delete extends \Magento\Framework\App\Action\Action
         }
 
         $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('blog/index/index');
+        $resultRedirect->setPath('helloworld/index/index');
         return $resultRedirect;
     }
 }

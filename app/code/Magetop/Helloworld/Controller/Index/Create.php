@@ -1,7 +1,7 @@
 <?php
 namespace Magetop\Helloworld\Controller\Index;
 
-class Index extends \Magento\Framework\App\Action\Action
+class Create extends \Magento\Framework\App\Action\Action
 {
 	protected $_pageFactory;
 
@@ -21,5 +21,5 @@ class Index extends \Magento\Framework\App\Action\Action
 	public function execute()
 	{
 		return $this->_pageFactory->create();
-	}
+    }
 }
