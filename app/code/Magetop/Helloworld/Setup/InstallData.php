@@ -20,7 +20,7 @@ class InstallData implements InstallDataInterface
         ];
 
         foreach ($data as $value) {
-            $setup->getConnection()->insertForce($setup->getTable('aht_blog_post'), $value);
+            $setup->getConnection()->insertForce($setup->getTable('magetop_hello_post'), $value);
         }
     }
 }

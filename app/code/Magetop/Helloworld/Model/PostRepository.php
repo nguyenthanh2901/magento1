@@ -69,6 +69,6 @@ class PostRepository implements PostRepositoryInterface
     public function deleteById($PostId)
     {
         // var_dump($this->getById($PostId)); die;
-        return $this->delete($this->getById($PostId)); 
+        return $this->delete($this->getById($PostId));
     }
 }

@@ -4,7 +4,8 @@
     	<a href="<?php echo $block->getBaseUrl(); ?>helloworld/index/create" class="btn btn-primary btn-xs pull-right">Create New Post</a>
 	  	<tr>
 		    <th>Id</th>
-		    <th>Name</th>
+			<th>Name</th>
+			<th>Content</th>
 		    <th colspan="2">Action</th>
 	    </tr>
     </thead>
@@ -17,6 +18,7 @@
 			<tr style="border: 1px solid #dddddd; text-align: left; padding: 8px;">
 				<td><?php echo $post->getId(); ?></td>
 				<td><?php echo $post->getName(); ?></td>
+				<td><?php echo $post->getContent(); ?></td>
 				<td>
 					<a href="<?php echo $block->getBaseUrl();?>helloworld/index/edit/post_id/<?php echo $post->getId(); ?>">Edit</a>
 				</td>

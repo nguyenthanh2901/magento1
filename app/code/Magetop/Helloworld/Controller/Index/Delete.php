@@ -35,7 +35,7 @@ class Delete extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        $post_id = $this->getRequest()->getParam('post_id'); 
+        $post_id = $this->getRequest()->getParam('post_id');
         $this->_postRepository->deleteById($post_id);
 
         $types = ['config','layout','block_html','collections','reflection','db_ddl','eav','config_integration','config_integration_api','full_page','translate','config_webservice'];
