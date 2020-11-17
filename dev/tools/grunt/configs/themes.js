@@ -50,5 +50,16 @@ module.exports = {
             'css/styles'
         ],
         dsl: 'less'
+    },
+    theme: {
+        area: 'adminhtml',
+        name: 'Magento/backend',
+        locale: 'en_US',
+        files: [
+            'css/styles-old',
+            'css/styles'
+        ],
+        dsl: 'less'
     }
+    
 };
