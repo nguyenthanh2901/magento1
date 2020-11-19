@@ -7,8 +7,7 @@
 
 /**
  * Define Themes
- *
- * area: area, one of (frontend|adminhtml|doc),
+ *rea: area, one of (frontend|adminhtml|doc),
  * name: theme name in format Vendor/theme-name,
  * locale: locale,
  * files: [
