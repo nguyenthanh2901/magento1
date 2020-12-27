@@ -252,6 +252,8 @@ return [
         'Magento_WishlistGraphQl' => 1,
         'Magento_WishlistSampleData' => 1,
         'AHT_Blog' => 1,
+        'AHT_HelloWorld' => 1,
+        'AHT_Shipme' => 1,
         'Amazon_Core' => 1,
         'Amazon_Login' => 1,
         'Amazon_Payment' => 1,

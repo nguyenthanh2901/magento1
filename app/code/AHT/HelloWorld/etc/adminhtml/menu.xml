@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AHT_HelloWorld::helloworld" title="HelloWorld" module="AHT_HelloWorld" sortOrder="50" parent="Magento_Backend::marketing" resource="AHT_HelloWorld::helloworld" />
+        <add id="AHT_HelloWorld::index" title="Helloworld Index" module="AHT_HelloWorld" sortOrder="55" parent="AHT_HelloWorld::helloworld" action="helloworld/index/" resource="AHT_HelloWorld::index" />
+        <add id="AHT_HelloWorld::subscription" title="Subscriptions" module="AHT_HelloWorld" sortOrder="70" parent="AHT_HelloWorld::helloworld" action="helloworld/subscription/" resource="AHT_HelloWorld::subscription" />
+        <add id="AHT_HelloWorld::component" title="Components" module="AHT_HelloWorld" sortOrder="80" parent="AHT_HelloWorld::helloworld" action="helloworld/component/" resource="AHT_HelloWorld::helloworld" />
+    </menu>
+</config>
